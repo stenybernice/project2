@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body {
+            background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(78, 5, 105));
+            color: white;
+            font-family: 'Oswald', sans-serif;
+        }
+        nav{
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            height: 80px;
+            background-color: linear-gradient(to right, rgb(0, 0, 0), rgb(78, 5, 105));
+        }
+        nav ul{
+            display:flex;
+            justify-content: center;
+        }
+        nav ul li{
+            list-style:none;
+            margin:0 23px;
+        }
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+        }
+        nav ul li a:hover{
+            font-size:1.04rem;
+        }
+        .left{
+            font-size:1.5rem;
+        }
+        .firstsection{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            margin:80px 0;
+        }
+        .firstsection div{
+           width:30%;
+
+        }
+        .leftsection{
+            font-size:2rem;
+            margin:30px 0;
+            
+        }
+        .rightsection{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .purple{
+            color:blueviolet;
+        }
+        .rightsection img {
+            width: 150%; 
+            height: auto; 
+          }
+          #element{
+            color:blueviolet;
+          }
+          footer {
+          background-color: #000000;
+          padding: 10px;
+          text-align: center;
+          color: #ffffff;
+          font-size: 12px;
+          font-family: Arial,sans-serif;
+          clear: both; /* add this to clear the float */
+        }
+        /*about*/
+        #about{
+            padding:200px 0;
+            color:#ffffff;
+        }
+        .aboutcol1 {
+          float: left; /* align image to the left */
+          margin-right: 20px; /* add some space between image and text */
+        }
+
+        .aboutcol1 img {
+          width: 550px; /* increase image size */
+          
+        }
+        .aboucol2{
+            flex-basis: 60%;
+        }
+        .subtitle{
+            font-size:60px;
+            font-weight: 600;
+            color:#ffffff;
+            font-family: poppins, sans-serif;
+
+        }
+        .subtitle1{
+            font-size:60px;
+            font-weight: 600;
+            color:#ffffff;
+            font-family: poppins, sans-serif;
+            text-align: left;
+            margin-left: 0;
+            
+
+        }
+        .tabtitles {
+          display: flex;
+          justify-content: space-between;
+          margin: 20px 0 40px;
+        }
+        
+
+        .tab-links {
+          margin-right: 50px;
+          font-size: 18px;
+          font-weight: 500;
+          cursor: pointer;
+          position: relative;
+        }
+
+        .tab-links::after{
+            content:'';
+            width:0;
+            height:3px;
+            
+            position:absolute;
+            left:0;
+            bottom:-8px;
+            transition: 0.5s;
+
+        }
+        .tab-links.active-link::after{
+            width:50%;
+        }
+        .tab-links {
+            font-family: Poppins, sans-serif;
+             font-size: 20px; 
+            position: relative; 
+             top: 30px; 
+             font-weight:bold;
+        }
+
+        .tab-links:hover {
+             color: blueviolet;
+            transform: translateY(-5px);
+        }
+
+        .languages {
+          margin-top: 20px;
+        }
+
+        .language {
+          display: inline-block;
+          margin: 10px;
+        }
+
+        .language img {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+        }
+
+        .language p {
+          display: inline-block;
+          font-size: 18px;
+          font-weight: 500;
+          color: #ffffff;
+        }
+
+        .content {
+          display: none;
+        }
+
+        .active-content {
+          display: block;
+        }
+        .Experience {
+           position: relative;
+           margin-top: 100px; 
+            }
+        
+
+        .education-timeline {
+          margin-top: 30px;
+        }
+
+        .education-timeline ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .education-timeline ul li {
+          margin-bottom: 20px;
+        }
+
+        .education-timeline ul li::before {
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: blueviolet;
+          border-radius: 50%;
+          left: -20px;
+          top: 10px;
+        }
+
+       .education-timeline ul li::after {
+          content: "";
+          position: absolute;
+          width: 2px;
+          height: 100%;
+          background-color: blueviolet;
+          left: -15px;
+          top: 20px;
+        }
+
+       .education-timeline ul li:last-child::after {
+          height: 50%;
+        }
+
+       .education-timeline ul li span {
+          font-size: 18px;
+          font-weight: 500;
+          color: #ffffff;
+          margin-left: 20px;
+        }
+        /*contact*/
+        #contact {
+            padding: 80px 0;
+            color: #ffffff;
+        }
+       .contactleft {
+            flex-basis: 60%;
+        }
+       .contactright {
+            flex-basis: 40%;
+        }
+       .socialicons {
+            margin-top: 20px;
+        }
+       .socialicons a {
+            margin-right: 20px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+        .contactleft{
+          flex-basis: 35%;
+          float:left;
+          width:10%;
+          padding:10px;
+
+        }
+        .contactright{
+          
+          float:right;
+          width:60%;
+          padding:20px;
+
+
+        }
+        
+
+        
+        .contactleft p{
+          margin-top:30px;
+        }
+        .contactleft p{
+          color:#ffffff;
+          margin-right:15px;
+          font-size:25px;
+        }
+        .socialicons{
+          margin-top:30px;
+        }
+        .socialicons a{
+          text-decoration:none ;
+          font-size: 30px;
+          margin-right:15px;
+          color:white;
+          display:inline-block;
+          transition:transform 0.5s ;
+
+        }
+        .socialicons a:hover{
+          color:blueviolet;
+          transform:translateY(-5px);
+
+        }
+        .btn.btn2{
+          display: inline-block;
+          background:blueviolet;
+        }
+        .btncustom{
+          background-color: blueviolet;
+          color:#ffffff;
+          padding:10px 20px;
+          border:none;
+          border-radius: 5px;
+          cursor:pointer;
+          font-size: 16px;
+        }
+        .contactright form{
+          display:flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+        form input,form textarea{
+          width:100%;
+          border:0 ;
+          outline:none;
+          background:white;
+          padding: 15px;
+          margin:15px 0;
+          color:#000000;
+          font-size:18px;
+          border-radius:6px;
+          cursor:pointer;
+          
+
+        }
+
+ 
+
+
+       
+       
+
+       
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">My portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+       <section id="home" class="firstsection">
+        <div class="leftsection">
+            Hi, I'm <span class="purple">Steny,</span><br>
+            
+               I study<br>
+               <span id="element"></span>
+        </div>
+        <div class="rightsection">
+            <img src="webimg.png" alt="">
+        </div>
+       </section>
+    
+<!----------about------------->
+       <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="aboutcol1">
+                    <img src="img1.png">
+                </div>
+                <div class="aboutcol2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p style="text-align: justify; width: 90%;">Hello!,  I'm currently pursuing my Bachelor's degree in Computer Science, 
+                        with a keen interest in artificial intelligence (AI), machine learning (ML), and other cutting-edge technologies.
+                         My academic journey has been fueled by a passion for understanding and leveraging AI and ML to solve real-world problems.
+                          I would love to be actively involved in various projects that explore the capabilities of neural networks, natural language processing,
+                           and data analysis. Beyond the classroom, I like to stay updated with the latest tech trends, from blockchain to quantum computing,
+                            and enjoy experimenting with innovative applications. My goal is to contribute to the tech industry by developing intelligent
+                             systems that enhance efficiency and foster technological advancement.</p>
+                           <p>                                         </p>
+     
+         <div class="tabtitle">
+             <p class="tab-links active-link" style="display: inline-block;" onmouseover="this.style.color='blueviolet';this.style.transform='translateY(-5px)';" onmouseout="this.style.color='';this.style.transform='';" onclick="showContent('languages')">Languages known</p>
+             <p class="tab-links" style="display: inline-block;" onmouseover="this.style.color='blueviolet';this.style.transform='translateY(-5px)';" onmouseout="this.style.color='';this.style.transform='';" onclick="showContent('Experience')">Experience</p>
+             <p class="tab-links" style="display: inline-block;" onmouseover="this.style.color='blueviolet';this.style.transform='translateY(-5px)';" onmouseout="this.style.color='';this.style.transform='';" onclick="showContent('education')">Education</p>
+        </div>
+         
+         <div id="languages" class="content">
+            <div class="languages">
+                <div class="language">
+                    <img src="python.png" alt="Python Logo">
+                    <p>Python</p>
+                </div>
+                <div class="language">
+                    <img src="html5.png" alt="HTML Logo">
+                    <p>HTML</p>
+                </div>
+                <div class="language">
+                    <img src="css3.png" alt="CSS Logo">
+                    <p>CSS</p>
+                </div>
+                <div class="language">
+                    <img src="java.png" alt="Java Logo">
+                    <p>Java</p>
+                    <div class="language">
+                      <img src="c.png" alt="Python Logo">
+                      <p>C</p>
+                  </div>
+                </div>
+            </div>
+         </div>
+         
+         <div id="Experience" class="content">
+            
+         </div>
+         
+         <div id="education" class="content">
+            <div class="education-timeline">
+                <ul>
+                    <li>
+                        <span>2023-2027</span>
+                        <p>Bachelor of Science in Computer Science</p>
+                    </li>
+                    <li>
+                        <span>2027-2029</span>
+                        <p>Master of Science in Computer Science</p>
+                    </li>
+                </ul>
+            </div>
+         </div>
+                </div>
+            </div>
+        </div>
+       </section>
+    
+<!--------------contact------------>
+<section id="contact">
+  <div class="container">
+      <div class="row">
+          <div class="contactleft">
+
+              <h1 class="subtitle1">Contact Me</h1>
+              <p>stenybernice@karunya.edu.in</p>
+              <div class="socialicons">
+                  <a href="https://www.linkedin.com/in/steny-bernice-l-r-473ab82a5/"><i class="fab fa-linkedin" style="color: #ffffff;"></i></a>
+                  <a href="https://github.com/stenybernice"><i class="fab fa-github" style="color: #ffffff;"></i></a>
+              </div>
+          </div>
+          <div class="contactright">
+            <form>
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email"required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btncustom">Submit</button>
+            </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+  
+
+    </main>
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: [ 'Computer Science','Artificial Intelligence','Software Engineering','Data Science'],
+          typeSpeed: 50,
+        });
+        
+        function showContent(id) {
+            var contents = document.querySelectorAll('.content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active-content');
+            }
+            document.getElementById(id).classList.add('active-content');
+        }
+      </script>
+    <footer>
+        <p>&copy; 2024 Copyrights Reserved</p>
+    </footer>
+</body>
+</html>
